@@ -79,7 +79,15 @@ namespace Doque.Controllers
                 // Attempt to register the user
                 try
                 {
-                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password,
+                    propertyValues: new
+                                 {
+                                   PostalCode = model.PostalCode,
+                                   Ssn = model.Ssn,
+                                   Adress = model.Adress
+                                  // isDisabled = false
+                                 });
+
                     WebSecurity.Login(model.UserName, model.Password);
                     return RedirectToAction("Index", "Home");
                 }

@@ -11,12 +11,13 @@ namespace Doque.Models
 {
     public class UsersContext : DbContext
     {
+        public DbSet<UserProfile> UserProfiles { get; set; }
         public UsersContext()
             : base("DefaultConnection")
         {
         }
 
-        public DbSet<UserProfile> UserProfiles { get; set; }
+        
     }
 
     [Table("UserProfile")]
@@ -26,6 +27,9 @@ namespace Doque.Models
         [DatabaseGeneratedAttribute(DatabaseGeneratedOption.Identity)]
         public int UserId { get; set; }
         public string UserName { get; set; }
+        public string Ssn { get; set; }
+        public string PostalCode { get; set; }
+        public string Adress { get; set; }
     }
 
     public class RegisterExternalLoginModel
@@ -76,6 +80,18 @@ namespace Doque.Models
         [Required]
         [Display(Name = "User name")]
         public string UserName { get; set; }
+       
+        [Required]
+        [Display(Name = "Social Security Number")]
+      //  [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:######-####}")]
+        public string Ssn { get; set; }
+
+        [Required]
+        [Display(Name = "Your Home Adress")]
+        public string Adress { get; set; }
+        [Required]
+        [Display(Name = "Postal Code")]
+        public string PostalCode { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
