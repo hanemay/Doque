@@ -1,0 +1,78 @@
+﻿@model Doque.Models.Answers
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Answers</legend>
+
+        @Html.HiddenFor(model => model.ID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UserID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.UserID)
+            @Html.ValidationMessageFor(model => model.UserID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.QuestionOptionID, "QuestionOptions")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("QuestionOptionID", String.Empty)
+            @Html.ValidationMessageFor(model => model.QuestionOptionID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Numeric)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Numeric)
+            @Html.ValidationMessageFor(model => model.Numeric)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Text)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Text)
+            @Html.ValidationMessageFor(model => model.Text)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Bool)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Bool)
+            @Html.ValidationMessageFor(model => model.Bool)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.UnitOfMeasureID, "UnitOfMeasures")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("UnitOfMeasureID", String.Empty)
+            @Html.ValidationMessageFor(model => model.UnitOfMeasureID)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,57 @@
+﻿@model Doque.Models.Answers
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Answers</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UserID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UserID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.QuestionOptions.ID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuestionOptions.ID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Numeric)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Numeric)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Text)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Text)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bool)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bool)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.UnitOfMeasures.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.UnitOfMeasures.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,50 @@
+﻿@model Doque.Models.SurveySection
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SurveySection</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SurveyHeader.SurveyName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SurveyHeader.SurveyName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Subheading)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Subheading)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Required)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Required)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

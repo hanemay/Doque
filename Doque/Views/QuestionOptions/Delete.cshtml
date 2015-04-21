@@ -1,0 +1,33 @@
+﻿@model Doque.Models.QuestionOptions
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>QuestionOptions</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Questions.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Questions.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OptionChoices.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OptionChoices.Name)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

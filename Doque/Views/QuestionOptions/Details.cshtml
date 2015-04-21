@@ -1,0 +1,29 @@
+﻿@model Doque.Models.QuestionOptions
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>QuestionOptions</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Questions.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Questions.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.OptionChoices.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.OptionChoices.Name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

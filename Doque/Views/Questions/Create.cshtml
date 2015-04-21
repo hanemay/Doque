@@ -1,0 +1,84 @@
+﻿@model Doque.Models.Questions
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Questions</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SurveySectionID, "SurveySection")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("SurveySectionID", String.Empty)
+            @Html.ValidationMessageFor(model => model.SurveySectionID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.InputTypeID, "InputTypes")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("InputTypeID", String.Empty)
+            @Html.ValidationMessageFor(model => model.InputTypeID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Subtext)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Subtext)
+            @Html.ValidationMessageFor(model => model.Subtext)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Required)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Required)
+            @Html.ValidationMessageFor(model => model.Required)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OptionGroupID, "OptionGroups")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("OptionGroupID", String.Empty)
+            @Html.ValidationMessageFor(model => model.OptionGroupID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.AllowMultipleOptionAnsers)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.AllowMultipleOptionAnsers)
+            @Html.ValidationMessageFor(model => model.AllowMultipleOptionAnsers)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
