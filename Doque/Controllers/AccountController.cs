@@ -11,6 +11,7 @@ using WebMatrix.WebData;
 using Doque.Filters;
 using Doque.Models;
 
+
 namespace Doque.Controllers
 {
     [Authorize]
@@ -89,6 +90,13 @@ namespace Doque.Controllers
                                  });
 
                     WebSecurity.Login(model.UserName, model.Password);
+                    UsersContext db = new UsersContext();
+                   
+                    
+                   // UserController user = new UserController();
+                    //int id = WebSecurity.GetUserId(model.UserName);
+                  //  db.Database.SqlQuery()
+                   // db.Database.
                     return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)

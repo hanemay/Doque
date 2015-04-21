@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="45dd5d38653b4399a322518c0ad66fab" Name="Diagram1">
+        <EntityTypeShape EntityType="Questionnaire.Answer" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Questionnaire.InputType" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Questionnaire.OptionChoice" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Questionnaire.OptionGroup" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Questionnaire.Organization" Width="1.5" PointX="1.5" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Questionnaire.QuestionOption" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Questionnaire.Question" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Questionnaire.SurveyComment" Width="1.5" PointX="3.75" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Questionnaire.SurveyHeader" Width="1.5" PointX="1.5" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Questionnaire.SurveySection" Width="1.5" PointX="0.75" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Questionnaire.UnitOfMeasure" Width="1.5" PointX="5.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Questionnaire.UserSurveySection" Width="1.5" PointX="3" PointY="8.5" IsExpanded="true" />
+        <AssociationConnector Association="Questionnaire.FK_Answers_QuestionOptions" ManuallyRouted="false" />
+        <AssociationConnector Association="Questionnaire.FK_Answers_UnitOfMeasures" ManuallyRouted="false" />
+        <AssociationConnector Association="Questionnaire.FK_Questions_InputTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="Questionnaire.FK_OptionChoices_OptionGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="Questionnaire.FK_QuestionOptions_OptionChoices" ManuallyRouted="false" />
+        <AssociationConnector Association="Questionnaire.FK_Questions_OptionGroups" ManuallyRouted="false" />
+        <AssociationConnector Association="Questionnaire.FK_SurveyHeader_Organization" ManuallyRouted="false" />
+        <AssociationConnector Association="Questionnaire.FK_QuestionOptions_Questions" ManuallyRouted="false" />
+        <AssociationConnector Association="Questionnaire.FK_Questions_SurveySection" ManuallyRouted="false" />
+        <AssociationConnector Association="Questionnaire.FK_SurveyComments_SurveyHeader" ManuallyRouted="false" />
+        <AssociationConnector Association="Questionnaire.FK_SurveySection_SurveyHeader" ManuallyRouted="false" />
+        <AssociationConnector Association="Questionnaire.FK_UserSurveySections_SurveySection" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
